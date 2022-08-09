@@ -1,0 +1,202 @@
+/* ========= page-header =========   */
+body {
+  background-color: #f8f9fc !important;
+}
+
+#page-header {
+  margin-top: 50px;
+}
+
+#page-header-box {
+  display: flex;
+  align-items: center;
+  background-color: #f8fbfe;
+  border: 1px solid #eeeeee;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+#page-header-box h2 {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+}
+
+#page-header .container .row h1 {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0px;
+}
+
+#page-header .container .row .navbar-breadcrumb {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+#page-header .container .row .navbar-breadcrumb .breadcrumb-item a {
+  color: #004e75;
+  text-decoration: none;
+}
+/* ========= page-header =========   */
+/* ========= dashboard =========   */
+#dashboard-layouts {
+  margin-top: 30px;
+}
+
+#btn-mobile-sidebar {
+  display: none;
+}
+
+#sidebar {
+  padding: 15px;
+  background-color: #f8fbfe;
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
+}
+
+#sidebar h4 {
+  font-size: 16px;
+  margin-bottom: 18px;
+  font-weight: 600;
+  color: #98aab8;
+}
+
+#sidebar .sidebar-list .sidebar-item,
+#sidebar .sidebar-list .sidebar-link {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#sidebar .sidebar-list .sidebar-item .sidebar-link {
+  margin-top: 16px;
+}
+
+#sidebar .sidebar-list .sidebar-item .sidebar-link a {
+  font-size: 14px;
+  text-decoration: none;
+  color: #111111;
+  font-weight: 500;
+}
+
+#sidebar .sidebar-list .sidebar-item .sidebar-link a i {
+  color: #b5bbc4;
+  margin-right: 8px;
+}
+
+#main-content h3 {
+  font-size: 18px;
+  color: #98aab8;
+  font-weight: 700;
+}
+
+#main-content .name-user {
+  color: #004e75;
+}
+
+#main-content .card-list-container {
+  margin: 15px 0;
+  background-color: #004e75;
+  border: 0;
+  border-radius: 4px;
+  color: #ffffff;
+}
+
+#main-content .card-list-container .card-body .card-title {
+  font-size: 50px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+#main-content .card-list-container .card-body .card-text {
+  font-weight: 500;
+  color: #ffffff;
+}
+
+#main-content .card-list-container .card-icon i {
+  font-size: 50px;
+  opacity: 50%;
+}
+
+#main-content .card-list-container .bootom-card {
+  background-color: #036fa5;
+  border-radius: 0 0 4px 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 0px;
+}
+
+#main-content .card-list-container .bootom-card a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+#main-content .card-list-container .bootom-card a p {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+@media screen and (max-width: 425px) {
+  #page-header .container #page-header-box {
+    padding: 15px;
+  }
+
+  #btn-mobile-sidebar {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #eeeeee;
+    background-color: #f8fbfe;
+    border-radius: 8px 8px 0 0;
+    padding: 8px;
+    border-bottom: 0;
+    font-weight: bold;
+    color: #004e75;
+  }
+
+  #sidebar {
+    border-radius: 0 0 8px 8px;
+    border-top: 0;
+  }
+
+  #sidebar {
+    display: none;
+  }
+
+  #main-content {
+    margin-top: 24px;
+  }
+
+  #main-content .card-list-container {
+    margin-top: 15px;
+  }
+
+  #main-content .card-list-container .card-icon i,
+  #main-content .card-list-container .card-body .card-title {
+    font-size: 50px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  #page-header .container #page-header-box h1 {
+    font-size: 16px;
+  }
+
+  #page-header .container #page-header-box .navbar-breadcrumb {
+    font-size: 14px;
+  }
+}
+
+/* card template */
+#content-detail,
+#all-content {
+  margin-top: 30px;
+}
+
+.card-singgle-order-img {
+  border-radius: 6px 6px 0 0;
+}
