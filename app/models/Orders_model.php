@@ -15,8 +15,9 @@ class Orders_model
         if ($type == 'mobil') {
             $total_harga = $data['jumlah'] * $data['harga'];
             $query = "INSERT INTO {$this->table}
+                        (id_user, jenis_pesanan, hari_mulai, hari_selesai, jumlah, id_mobil, total_harga)
                         VALUES
-                        (null,:id_user,:jenis_pesanan,:hari_mulai,:hari_selesai,:jumlah,null,null,null,:id_mobil,null,:total_harga)";
+                        (:id_user, :jenis_pesanan, :hari_mulai, :hari_selesai, :jumlah, :id_mobil ,:total_harga)";
             $this->db->query($query);
             $this->db->bind('id_user', $data['id_user']);
             $this->db->bind('jenis_pesanan', $type);
@@ -25,15 +26,14 @@ class Orders_model
             $this->db->bind('jumlah', $data['jumlah']);
             $this->db->bind('id_mobil', $data['id_mobil']);
             $this->db->bind('total_harga', $total_harga);
-            // return $this->db->resultSet();
-            // return $this->db->single();
             $this->db->execute();
             return $this->db->rowCount();
         } elseif ($type == 'pelayaran') {
             $total_harga = $data['jumlah'] * $data['harga'];
             $query = "INSERT INTO {$this->table}
+                        (id_user, jenis_pesanan, hari_mulai, hari_selesai, jumlah, id_pelayaran, total_harga)
                         VALUES
-                        (null,:id_user,:jenis_pesanan,:hari_mulai,:hari_selesai,:jumlah,null,null,null,null,:id_pelayaran,:total_harga)";
+                        (:id_user, :jenis_pesanan, :hari_mulai, :hari_selesai, :jumlah, :id_pelayaran, :total_harga)";
             $this->db->query($query);
             $this->db->bind('id_user', $data['id_user']);
             $this->db->bind('jenis_pesanan', $type);
@@ -42,14 +42,14 @@ class Orders_model
             $this->db->bind('jumlah', $data['jumlah']);
             $this->db->bind('id_pelayaran', $data['id_pelayaran']);
             $this->db->bind('total_harga', $total_harga);
-            // return $this->db->resultSet();
-            // return $this->db->single();
+            $this->db->execute();
             return $this->db->rowCount();
-        } else if ($type == 'kamar') {
+        } elseif ($type == 'kamar') {
             $total_harga = $data['jumlah'] * $data['harga'];
             $query = "INSERT INTO {$this->table}
+                        (id_user, jenis_pesanan, hari_mulai, hari_selesai, jumlah, id_kamar, total_harga)
                         VALUES
-                        (null,:id_user,:jenis_pesanan,:hari_mulai,:hari_selesai,:jumlah,null,:id_kamar,null,null,null,:total_harga)";
+                        (:id_user, :jenis_pesanan, :hari_mulai, :hari_selesai, :jumlah, :id_kamar, :total_harga)";
             $this->db->query($query);
             $this->db->bind('id_user', $data['id_user']);
             $this->db->bind('jenis_pesanan', $type);
@@ -58,14 +58,14 @@ class Orders_model
             $this->db->bind('jumlah', $data['jumlah']);
             $this->db->bind('id_kamar', $data['id_kamar']);
             $this->db->bind('total_harga', $total_harga);
-            // return $this->db->resultSet();
-            // return $this->db->single();
+            $this->db->execute();
             return $this->db->rowCount();
         } elseif ($type == 'penerbangan') {
             $total_harga = $data['jumlah'] * $data['harga'];
             $query = "INSERT INTO {$this->table}
+                        (id_user, jenis_pesanan, hari_mulai, hari_selesai, jumlah, id_penerbangan, total_harga)
                         VALUES
-                        (null,:id_user,:jenis_pesanan,:hari_mulai,:hari_selesai,:jumlah,null,null,:id_penerbangan,null,null,:total_harga)";
+                        (:id_user, :jenis_pesanan, :hari_mulai, :hari_selesai, :jumlah, :id_penerbangan, :total_harga)";
             $this->db->query($query);
             $this->db->bind('id_user', $data['id_user']);
             $this->db->bind('jenis_pesanan', $type);
@@ -74,8 +74,7 @@ class Orders_model
             $this->db->bind('jumlah', $data['jumlah']);
             $this->db->bind('id_penerbangan', $data['id_penerbangan']);
             $this->db->bind('total_harga', $total_harga);
-            // return $this->db->resultSet();
-            // return $this->db->single();
+            $this->db->execute();
             return $this->db->rowCount();
         }
     }

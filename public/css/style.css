@@ -35,7 +35,7 @@ body {
 }
 
 #page-header .container .row .navbar-breadcrumb .breadcrumb-item a {
-  color: #004e75;
+  color: #f4a328;
   text-decoration: none;
 }
 /* ========= page-header =========   */
@@ -92,12 +92,12 @@ body {
 }
 
 #main-content .name-user {
-  color: #004e75;
+  color: #f4a328;
 }
 
 #main-content .card-list-container {
   margin: 15px 0;
-  background-color: #004e75;
+  background-color: #f4a328;
   border: 0;
   border-radius: 4px;
   color: #ffffff;
@@ -120,7 +120,7 @@ body {
 }
 
 #main-content .card-list-container .bootom-card {
-  background-color: #036fa5;
+  background-color: #c0770ac4;
   border-radius: 0 0 4px 4px;
   display: flex;
   align-items: center;
@@ -155,7 +155,7 @@ body {
     padding: 8px;
     border-bottom: 0;
     font-weight: bold;
-    color: #004e75;
+    color: #f4a328;
   }
 
   #sidebar {

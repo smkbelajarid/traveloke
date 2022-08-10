@@ -18,11 +18,13 @@ class Login extends Controller {
 			exit;
 		}
 		if ($this->model('Auth_model')->login($_POST['username'], $_POST['password'])){
+			Flasher::setFlash("Selamat datang, {$_POST['username']}",'','success','');
 			header('Location: '.BASEURL.'/index');
 			exit;
 		} else {
 			$error = $this->model('Auth_model')->getLastError();
 			// echo $error;
+			Flasher::setFlash('email atau password salah','','danger','');
 			header('Location: '.BASEURL.'/login');
 			exit;
 		}

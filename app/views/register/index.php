@@ -16,7 +16,7 @@
                       <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Nama" autocomplete="off" name="name" required/>
                     </div>
                     <div class="col-sm-6">
-                      <input type="phone" class="form-control form-control-user" id="exampleLastName" placeholder="Telp" autocomplete="off" name="phone" required/>
+                      <input type="number" class="form-control form-control-user" id="exampleLastName" placeholder="Telp" autocomplete="off" name="phone" required/>
                     </div>
                   </div>
                   <div class="form-group row">
@@ -39,10 +39,10 @@
                   <hr />
                   <div class="row">
                     <div class="col-6">
-                      <a href="index.html" class="btn btn-google btn-user btn-block"> <i class="fab fa-google fa-fw"></i> Register with Google </a>
+                      <a href="#" class="btn btn-google btn-user btn-block"> <i class="fab fa-google fa-fw"></i> Register with Google </a>
                     </div>
                     <div class="col-6">
-                      <a href="index.html" class="btn btn-facebook btn-user btn-block"> <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook </a>
+                      <a href="#" class="btn btn-facebook btn-user btn-block"> <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook </a>
                     </div>
                   </div>
                 </form>

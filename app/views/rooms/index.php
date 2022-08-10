@@ -67,22 +67,6 @@
                     <span>Wisata</span>
                 </a>
             </li>
-
-            <div class="sidebar-heading">User</div>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>User</span>
-                </a>
-            </li>
-
-            <div class="sidebar-heading">Pemesanan</div>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Pemesanan</span>
-                </a>
-            </li>
         </ul>
         <!-- End of Sidebar -->
 
@@ -121,30 +105,30 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Danta</span>
-                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg" />
-                            </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a>
-                            </div>
+                        <div class="dropdown">
+                  <a href="" class="float-right" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-user-circle fa-2x text-dark" aria-hidden="true"></i>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                    <a class="dropdown-item" href="#">
+                      <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                      Profile
+                    </a>
+                    <a class="dropdown-item" href="#">
+                      <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                      Settings
+                    </a>
+                    <a class="dropdown-item" href="#">
+                      <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                      Activity Log
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                      <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                      Logout
+                    </a>
+                  </div>
+                </div>
                         </li>
                     </ul>
                 </nav>
@@ -180,7 +164,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($data['rooms'] as $rooms) : ?>
+                                        <?php foreach ($data['res']['rooms'] as $rooms) : ?>
                                             <tr>
                                                 <td><?= $rooms['id_kamar']; ?></td>
                                                 <td><?= $rooms['id_hotel']; ?></td>
@@ -256,7 +240,7 @@
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Id Hotel</label>
                             <select class="custom-select" id="inputGroupSelect01" name="id_hotel">
-                                <?php foreach ($data['hotels'] as $hotel) : ?>
+                                <?php foreach ($data['res']['hotels'] as $hotel) : ?>
                                     <option value="<?= $hotel['id_hotel']; ?>"><?= $hotel['nama_hotel']; ?></option>
                                 <?php endforeach; ?>
                             </select>
@@ -296,7 +280,7 @@
         </div>
     </div>
     <!-- end create modal -->
-    <?php foreach ($data['rooms'] as $rooms) : ?>
+    <?php foreach ($data['res']['rooms'] as $rooms) : ?>
         <!-- edit modal -->
         <div class="modal" id="editModal<?= $rooms['id_kamar']; ?>" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered modal-xl">
@@ -313,8 +297,8 @@
                             <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Id Hotel</label>
                                 <select class="custom-select" id="inputGroupSelect01" name="id_hotel">
-                                    <?php foreach ($data['hotels'] as $hotel) : ?>
-                                        <option selected><?= $rooms['id_hotel']; ?> yang di pilih</option>
+                                    <?php foreach ($data['res']['hotels'] as $hotel) : ?>
+                                        <option selected value="<?= $hotel['id_hotel']; ?>"><?= $hotel['id_hotel']; ?> yang di pilih</option>
                                         <option value="<?= $hotel['id_hotel']; ?>"><?= $hotel['nama_hotel']; ?></option>
                                     <?php endforeach; ?>
                                 </select>

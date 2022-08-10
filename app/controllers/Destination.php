@@ -12,7 +12,14 @@ class Destination extends Controller{
 		$data['title'] = 'Destination';
 		$data['destinations'] = $this->model('Destination_model')->getAllDestination();
 		$this->view('templates/header', $data);
-		$this->view('destination/index', $data);
+		// $this->view('destination/index', $data);
+		$data['user'] = $this->model('Auth_model')->getUser();
+		if ($data['user']['level'] == 'admin'){
+            $this->view('destination/index', $data);
+        } else if ($data['user']['level'] == 'user') {
+            // $this->view('destination/user', $data);
+            header('Location: '.BASEURL.'/index');
+        }
 		$this->view('templates/footer');	
 	}
 

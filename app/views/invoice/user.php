@@ -1,23 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-
-    <title>SB Admin 2 - Dashboard</title>
-
-    <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-
-    <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet" />
-    <link href="css/style.css" rel="stylesheet" />
-  </head>
-
   <body id="page-top">
     <section id="page-header">
       <div class="container">
@@ -25,7 +5,7 @@
           <div class="col">
             <div id="page-header-box">
               <div class="col-xxl-10 col-xl-10 col-md-10 col-xs-10 col-10">
-                <h1>Dashboard</h1>
+                <h1>Invoice</h1>
               </div>
               <div class="col-xxl-2 col-xl-2 col-md-2 col-xs-2 col-2">
                 <div class="dropdown">
@@ -62,54 +42,7 @@
     <section id="dashboard-layouts">
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-xxl-3 col-xl-3 col-md-3">
-            <button id="btn-mobile-sidebar">Menu Dashboard</button>
-            <section id="sidebar">
-              <div class="sidebar-list">
-                <h4 class="text-primary">Main</h4>
-                <ul class="sidebar-item">
-                  <li class="sidebar-link">
-                    <a href="">
-                      <i class="fa fa-tachometer" aria-hidden="true"></i>
-                      Dashboard
-                    </a>
-                  </li>
-                  <li>
-                    <hr />
-                  </li>
-                </ul>
-              </div>
-              <div class="sidebar-list">
-                <h4 class="text-primary">Pemesanan</h4>
-                <ul class="sidebar-item">
-                  <li class="sidebar-link">
-                    <a href="hotel-user.html">
-                      <i class="fa fa-tachometer" aria-hidden="true"></i>
-                      Kamar Hotel
-                    </a>
-                  </li>
-                  <li class="sidebar-link">
-                    <a href="">
-                      <i class="fa fa-tachometer" aria-hidden="true"></i>
-                      Mobil
-                    </a>
-                  </li>
-                  <li class="sidebar-link">
-                    <a href="">
-                      <i class="fa fa-tachometer" aria-hidden="true"></i>
-                      Pesawat
-                    </a>
-                  </li>
-                  <li class="sidebar-link">
-                    <a href="">
-                      <i class="fa fa-tachometer" aria-hidden="true"></i>
-                      Kapal
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </section>
-          </div>
+          <?php include '../app/views/templates/user/sidebar.php'; ?>
           <div class="col-xxl-9 col-xl-9 col-md-9">
             <section id="main-content">
               <div class="row justify-content-center">
@@ -134,24 +67,17 @@
                             </tr>
                           </thead>
                           <tbody>
-                            <tr>
-                              <td>Tiger Nixon</td>
-                              <td>System Architect</td>
-                              <td>Edinburgh</td>
-                              <td>61</td>
-                              <td>2011/04/25</td>
-                              <td>$320,800</td>
-                              <td><a href="" class="btn btn-blue" data-toggle="modal" data-target="#createHotel">Edit</a> <a href="" class="btn btn-danger">Hapus</a></td>
-                            </tr>
-                            <tr>
-                              <td>Charde Marshall</td>
-                              <td>Regional Director</td>
-                              <td>San Francisco</td>
-                              <td>36</td>
-                              <td>2008/10/16</td>
-                              <td>$470,600</td>
-                              <td><a href="" class="btn btn-blue" data-toggle="modal" data-target="#createHotel">Edit</a> <a href="" class="btn btn-danger">Hapus</a></td>
-                            </tr>
+                            <?php foreach ($data['invoice']['rooms'] as $res) : ?>
+                              <tr>
+                                <td><?= $res['id_pemesanan']; ?></td>
+                                <td><?= $res['jenis_pesanan']; ?></td>
+                                <td><?= $res['hari_mulai']; ?></td>
+                                <td><?= $res['hari_selesai']; ?></td>
+                                <td><?= $res['tipe_kamar']; ?></td>
+                                <td><?= $res['deskripsi']; ?></td>
+                                <td><?= $res['total_harga']; ?></td>
+                              </tr>
+                            <?php endforeach; ?>
                           </tbody>
                         </table>
                       </div>
@@ -176,24 +102,17 @@
                             </tr>
                           </thead>
                           <tbody>
-                            <tr>
-                              <td>Tiger Nixon</td>
-                              <td>System Architect</td>
-                              <td>Edinburgh</td>
-                              <td>61</td>
-                              <td>2011/04/25</td>
-                              <td>$320,800</td>
-                              <td><a href="" class="btn btn-blue" data-toggle="modal" data-target="#createHotel">Edit</a> <a href="" class="btn btn-danger">Hapus</a></td>
-                            </tr>
-                            <tr>
-                              <td>Charde Marshall</td>
-                              <td>Regional Director</td>
-                              <td>San Francisco</td>
-                              <td>36</td>
-                              <td>2008/10/16</td>
-                              <td>$470,600</td>
-                              <td><a href="" class="btn btn-blue" data-toggle="modal" data-target="#createHotel">Edit</a> <a href="" class="btn btn-danger">Hapus</a></td>
-                            </tr>
+                            <?php foreach ($data['invoice']['cars'] as $res) : ?>
+                              <tr>
+                                <td><?= $res['id_pemesanan']; ?></td>
+                                <td><?= $res['jenis_pesanan']; ?></td>
+                                <td><?= $res['hari_mulai']; ?></td>
+                                <td><?= $res['hari_selesai']; ?></td>
+                                <td><?= $res['tipe_mobil']; ?></td>
+                                <td><?= $res['jumlah_kursi']; ?></td>
+                                <td><?= $res['total_harga']; ?></td>
+                              </tr>
+                            <?php endforeach; ?>
                           </tbody>
                         </table>
                       </div>
@@ -218,24 +137,17 @@
                             </tr>
                           </thead>
                           <tbody>
-                            <tr>
-                              <td>Tiger Nixon</td>
-                              <td>System Architect</td>
-                              <td>Edinburgh</td>
-                              <td>61</td>
-                              <td>2011/04/25</td>
-                              <td>$320,800</td>
-                              <td><a href="" class="btn btn-blue" data-toggle="modal" data-target="#createHotel">Edit</a> <a href="" class="btn btn-danger">Hapus</a></td>
-                            </tr>
-                            <tr>
-                              <td>Charde Marshall</td>
-                              <td>Regional Director</td>
-                              <td>San Francisco</td>
-                              <td>36</td>
-                              <td>2008/10/16</td>
-                              <td>$470,600</td>
-                              <td><a href="" class="btn btn-blue" data-toggle="modal" data-target="#createHotel">Edit</a> <a href="" class="btn btn-danger">Hapus</a></td>
-                            </tr>
+                            <?php foreach ($data['invoice']['flights'] as $res) : ?>
+                              <tr>
+                                <td><?= $res['id_pemesanan']; ?></td>
+                                <td><?= $res['jenis_pesanan']; ?></td>
+                                <td><?= $res['hari_mulai']; ?></td>
+                                <td><?= $res['hari_selesai']; ?></td>
+                                <td><?= $res['kelas_penerbangan']; ?></td>
+                                <td><?= $res['maskapai_penerbangan']; ?></td>
+                                <td><?= $res['total_harga']; ?></td>
+                              </tr>
+                            <?php endforeach; ?>
                           </tbody>
                         </table>
                       </div>
@@ -260,24 +172,17 @@
                             </tr>
                           </thead>
                           <tbody>
-                            <tr>
-                              <td>Tiger Nixon</td>
-                              <td>System Architect</td>
-                              <td>Edinburgh</td>
-                              <td>61</td>
-                              <td>2011/04/25</td>
-                              <td>$320,800</td>
-                              <td><a href="" class="btn btn-blue" data-toggle="modal" data-target="#createHotel">Edit</a> <a href="" class="btn btn-danger">Hapus</a></td>
-                            </tr>
-                            <tr>
-                              <td>Charde Marshall</td>
-                              <td>Regional Director</td>
-                              <td>San Francisco</td>
-                              <td>36</td>
-                              <td>2008/10/16</td>
-                              <td>$470,600</td>
-                              <td><a href="" class="btn btn-blue" data-toggle="modal" data-target="#createHotel">Edit</a> <a href="" class="btn btn-danger">Hapus</a></td>
-                            </tr>
+                            <?php foreach ($data['invoice']['ships'] as $res) : ?>
+                              <tr>
+                                <td><?= $res['id_pemesanan']; ?></td>
+                                <td><?= $res['jenis_pesanan']; ?></td>
+                                <td><?= $res['hari_mulai']; ?></td>
+                                <td><?= $res['hari_selesai']; ?></td>
+                                <td><?= $res['kelas_pelayaran']; ?></td>
+                                <td><?= $res['maskapai_pelayaran']; ?></td>
+                                <td><?= $res['total_harga']; ?></td>
+                              </tr>
+                            <?php endforeach; ?>
                           </tbody>
                         </table>
                       </div>
@@ -304,22 +209,8 @@
           <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
+            <a class="btn btn-primary" href="<?= BASEURL; ?>/logout">Logout</a>
           </div>
         </div>
       </div>
     </div>
-
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="js/sb-admin-2.min.js"></script>
-    <script src="vendor/chart.js/Chart.min.js"></script>
-
-    <script>
-      $("#btn-mobile-sidebar").on("click", function (e) {
-        $("#sidebar").toggle();
-      });
-    </script>
-  </body>
-</html>

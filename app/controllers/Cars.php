@@ -8,24 +8,29 @@ class Cars extends Controller
 
 	public function index()
 	{
-		if (!$this->model('Auth_model')->isLoggedIn()){
-            header('Location: '.BASEURL.'/login');
-        }
+		if (!$this->model('Auth_model')->isLoggedIn()) {
+			header('Location: ' . BASEURL . '/login');
+		}
 		$data['title'] = 'Cars';
-		$data['cars'] = $this->model('Cars_model')->getAllCars();
+		$data['res']['cars'] = $this->model('Cars_model')->getAllCars();
 		$this->view('templates/header', $data);
-		$this->view('cars/index', $data);
+		$data['user'] = $this->model('Auth_model')->getUser();
+		if ($data['user']['level'] == 'admin') {
+			$this->view('cars/index', $data);
+		} else if ($data['user']['level'] == 'user') {
+			$this->view('cars/user', $data);
+		}
 		$this->view('templates/footer');
 	}
 
 	public function add()
 	{
 		if ($this->model('Cars_model')->addCarsData($_POST) > 0) {
-			Flasher::setFlash('berhasil','ditambahkan','success','mobil');
+			Flasher::setFlash('berhasil', 'ditambahkan', 'success', 'mobil');
 			header('Location: ' . BASEURL . '/cars');
 			exit;
 		} else {
-			Flasher::setFlash('gagal','ditambahkan','danger','mobil');
+			Flasher::setFlash('gagal', 'ditambahkan', 'danger', 'mobil');
 			header('Location: ' . BASEURL . '/cars');
 			exit;
 		}
@@ -34,11 +39,11 @@ class Cars extends Controller
 	public function	delete($id)
 	{
 		if ($this->model('Cars_model')->deleteCarsData($id) > 0) {
-			Flasher::setFlash('berhasil','dihapus','success','mobil');
+			Flasher::setFlash('berhasil', 'dihapus', 'success', 'mobil');
 			header('Location: ' . BASEURL . '/cars');
 			exit;
 		} else {
-			Flasher::setFlash('gagal','dihapus','danger','mobil');
+			Flasher::setFlash('gagal', 'dihapus', 'danger', 'mobil');
 			header('Location: ' . BASEURL . '/cars');
 			exit;
 		}
@@ -47,12 +52,12 @@ class Cars extends Controller
 	public function	edit()
 	{
 		if ($this->model('Cars_model')->editCarsData($_POST) > 0) {
-			Flasher::setFlash('berhasil','diubah','success','mobil');
+			Flasher::setFlash('berhasil', 'diubah', 'success', 'mobil');
 			echo "true";
 			header('Location: ' . BASEURL . '/cars');
 			exit;
 		} else {
-			Flasher::setFlash('gagal','diubah','danger','mobil');
+			Flasher::setFlash('gagal', 'diubah', 'danger', 'mobil');
 			echo "false";
 			header('Location: ' . BASEURL . '/cars');
 			exit;
@@ -60,31 +65,25 @@ class Cars extends Controller
 		// $this->model('Cars_model')->editCarsData($_POST);
 	}
 
-	public function orders($id=null)
+	public function orders($id = null)
 	{
-		if (isset($id)){
+		if (isset($id)) {
 			$data['title'] = 'Cars - orders';
-			$data['res'] = $this->model('Cars_model')->getCarsById($id);
+			$data['res']['cars'] = $this->model('Cars_model')->getCarsById($id);
+			if (!$data['res']['cars']) {
+				exit(header('Location: ' . BASEURL . '/cars/orders'));
+			}
 			$this->view('templates/header', $data);
 			$this->view('cars/orders', $data);
 			$this->view('templates/footer');
-			if (isset($_POST['jumlah'])){
-				if ($this->model('Orders_model')->addOrdersData($_POST, 'mobil') > 0){
-					// $_SESSION['res'] = $data['res'];
-					// $_SESSION['invoice'] = $this->model('Orders_model')->getCarsOrdersById($id);
-					echo "ok";
+			if (isset($_POST['jumlah'])) {
+				if ($this->model('Orders_model')->addOrdersData($_POST, 'mobil') > 0) {
+					// header('Location: '.BASEURL.'/invoice');
+					// exit;
 				}
-				// exit(header('Location: '.BASEURL.'/cars/orders/invoice'))
 			}
 		} else {
 			$this->index();
 		}
-	}
-
-	public function invoice($data){
-		$data['title'] = 'Cars - invoice';
-		$this->view('templates/header', $data);
-		$this->view('invoice/index', $data);
-		$this->view('templates/footer');
 	}
 }

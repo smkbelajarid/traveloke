@@ -67,22 +67,6 @@
                     <span>Wisata</span>
                 </a>
             </li>
-
-            <div class="sidebar-heading">User</div>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>User</span>
-                </a>
-            </li>
-
-            <div class="sidebar-heading">Pemesanan</div>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Pemesanan</span>
-                </a>
-            </li>
         </ul>
         <!-- End of Sidebar -->
 
@@ -121,30 +105,30 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Danta</span>
-                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg" />
-                            </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a>
-                            </div>
+                        <div class="dropdown">
+                  <a href="" class="float-right" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-user-circle fa-2x text-dark" aria-hidden="true"></i>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                    <a class="dropdown-item" href="#">
+                      <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                      Profile
+                    </a>
+                    <a class="dropdown-item" href="#">
+                      <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                      Settings
+                    </a>
+                    <a class="dropdown-item" href="#">
+                      <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                      Activity Log
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                      <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                      Logout
+                    </a>
+                  </div>
+                </div>
                         </li>
                     </ul>
                 </nav>
@@ -179,7 +163,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($data['flights'] as $flights) : ?>
+                                        <?php foreach ($data['res']['flights'] as $flights) : ?>
                                             <tr>
                                                 <td><?= $flights['id_penerbangan']; ?></td>
                                                 <td><?= $flights['kelas_penerbangan']; ?></td>
@@ -287,7 +271,7 @@
         </div>
     </div>
     <!-- end create modal -->
-    <?php foreach ($data['flights'] as $flights) : ?>
+    <?php foreach ($data['res']['flights'] as $flights) : ?>
         <!-- edit modal -->
         <div class="modal" id="editModal<?= $flights['id_penerbangan']; ?>" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered modal-xl">

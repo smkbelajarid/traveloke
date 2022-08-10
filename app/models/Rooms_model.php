@@ -10,10 +10,16 @@ class Rooms_model
         $this->db = new Database;
     }
 
-    public function getAllRooms()
+    public function getAllRooms($id=null)
     {
-        $this->db->query("SELECT * FROM {$this->table}");
-        return $this->db->resultSet();
+        if (isset($id)){
+            $this->db->query("SELECT * FROM hotel INNER JOIN {$this->table} ON hotel.id_hotel = {$this->table}.id_hotel WHERE hotel.id_hotel = :id");
+            $this->db->bind('id', $id);
+            return $this->db->resultSet();
+        } else {
+            $this->db->query("SELECT * FROM {$this->table}");
+            return $this->db->resultSet();
+        }
     }
 
     public function getRoomsById($id)

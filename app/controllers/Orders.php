@@ -10,7 +10,13 @@ class Orders extends Controller
         $data['title'] = 'Orders';
         $data['orders'] = $this->model('Orders_model')->getAllOrders();
         $this->view('templates/header', $data);
-        $this->view('orders/index', $data);
+        // $this->view('orders/index', $data);
+        $data['user'] = $this->model('Auth_model')->getUser();
+        if ($data['user']['level'] == 'admin'){
+            $this->view('orders/index', $data);
+        } else if ($data['user']['level'] == 'user') {
+            $this->view('orders/user', $data);
+        }
         $this->view('templates/footer');
     }
 
@@ -75,9 +81,11 @@ class Orders extends Controller
     public function add()
     {
         if ($this->model('Orders_model')->addOrdersData($_POST) > 0) {
+            Flasher::setFlash('berhasil','ditambah','success','order');
             header('Location: ' . BASEURL . '/orders');
             exit;
         } else {
+            Flasher::setFlash('gagal','ditambah','danger','order');
             header('Location: ' . BASEURL . '/orders');
             exit;
         }
@@ -86,9 +94,11 @@ class Orders extends Controller
     public function delete($id)
     {
         if ($this->model('Orders_model')->deleteOrdersData($id) > 0) {
+            Flasher::setFlash('berhasil','dihapus','success','order');
             header('Location: ' . BASEURL . '/orders');
             exit;
         } else {
+            Flasher::setFlash('gagal','dihapus','danger','order');
             header('Location: ' . BASEURL . '/orders');
             exit;
         }
@@ -98,10 +108,12 @@ class Orders extends Controller
     {
         if ($this->model('Orders_model')->editOrdersData($_POST) > 0) {
             // echo "true";
+            Flasher::setFlash('berhasil','diubah','success','order');
             header('Location: ' . BASEURL . '/orders');
             exit;
         } else {
             // echo "false";
+            Flasher::setFlash('berhasil','diubah','danger','order');
             header('Location: ' . BASEURL . '/orders');
             exit;
         }

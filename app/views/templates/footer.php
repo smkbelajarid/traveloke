@@ -11,6 +11,11 @@
     <!-- Page level plugins -->
     <script src="<?= BASEURL; ?>/vendor/chart.js/Chart.min.js"></script>
 
+    <script>
+      $("#btn-mobile-sidebar").on("click", function (e) {
+        $("#sidebar").toggle();
+      });
+    </script>
     <!-- Page level custom scripts -->
     </body>
 

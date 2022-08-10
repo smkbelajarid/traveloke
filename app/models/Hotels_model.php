@@ -16,6 +16,12 @@ class Hotels_model
         return $this->db->resultSet();
     }
 
+    public function getHotelsById($id){
+        $this->db->query("SELECT * FROM {$this->table} WHERE id_hotel = :id");
+        $this->db->bind('id', $id);
+        return $this->db->single();
+    }
+
     public function addHotelsData($data)
     {
         $img = $_FILES['img']['name'];

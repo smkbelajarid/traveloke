@@ -1,290 +1,142 @@
-<body id="page-top">
-    <!-- Page Wrapper -->
-    <div id="wrapper">
-        <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-home"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">TRAVELOKE</div>
-            </a>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0" />
-
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="<?= BASEURL; ?>/index">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider" />
-
-            <!-- Heading -->
-            <div class="sidebar-heading">Hotel</div>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="<?= BASEURL; ?>/hotels">
-                    <i class=" fas fa-fw fa-cog"></i>
-                    <span>Hotel</span>
-                </a>
-            </li>
-
-            <div class="sidebar-heading">Tiket</div>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="<?= BASEURL; ?>/rooms">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Kamar</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="<?= BASEURL; ?>/flights">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Pesawat</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="<?= BASEURL; ?>/cars">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Mobil</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="<?= BASEURL; ?>/ships">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Kapal</span>
-                </a>
-            </li>
-
-            <div class="sidebar-heading">Destinasi</div>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="<?= BASEURL; ?>/destination">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Wisata</span>
-                </a>
-            </li>
-
-            <div class="sidebar-heading">User</div>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>User</span>
-                </a>
-            </li>
-
-            <div class="sidebar-heading">Pemesanan</div>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Pemesanan</span>
-                </a>
-            </li>
-        </ul>
-        <!-- End of Sidebar -->
-
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
-            <!-- Main Content -->
-            <div id="content">
-                <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
-
-                    <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-search fa-fw"></i>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </li>
-
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Danta</span>
-                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg" />
-                            </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </nav>
-                <!-- End of Topbar -->
-
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-                    <h1 class="h3 mb-0 text-gray-800">Mobil</h1>
-                    <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between my-4">
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#createModal"></i>Tambah Data Mobil</a>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-                    </div>
-                    <!-- ========== Container neee  ==========  -->
-
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Hotel Data</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>Id kamar</th>
-                                            <th>id Hotel</th>
-                                            <th>tipe_kamar</th>
-                                            <th>Deskripsi</th>
-                                            <th>Harga</th>
-                                            <th>Gambar</th>
-                                            <th>Aksi</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php foreach ($data['rooms'] as $rooms) : ?>
-                                            <tr>
-                                                <td><?= $rooms['id_kamar']; ?></td>
-                                                <td><?= $rooms['id_hotel']; ?></td>
-                                                <td><?= $rooms['tipe_kamar']; ?></td>
-                                                <td><?= $rooms['deskripsi']; ?></td>
-                                                <td><?= $rooms['harga']; ?></td>
-                                                <td><img src="<?= BASEURL; ?>/public/img/<?= $rooms['gambar']; ?>" alt="" width="48"></td>
-                                                <td><a href="<?= BASEURL; ?>/orders/rooms/<?= $rooms['id_kamar']; ?>" class="btn btn-blue" data-toggle="modal" data-target="#editModal<?= $rooms['id_kamar']; ?>">Order</a></td>
-                                            </tr>
-                                        <?php endforeach; ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <!--  ========== akhir Container neee  ========== -->
-                </div>
-                <!-- /.container-fluid -->
+  <body id="page-top">
+    <?php include '../app/views/templates/user/header.php'; ?>
+    <section id="content-detail">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <div class="card border-0">
+              <img src="<?= BASEURL; ?>/public/img/<?= $data['res']['hotels']['gambar']; ?>" alt="rio sadboy 2k19" class="img-fluid card-singgle-order-img" style="height: 400px;" />
+              <div class="card-body">
+                <p>Hotel</p>
+                <h3 class="card-title"><?= $data['res']['hotels']['nama_hotel']; ?></h3>
+                <p class="card-text">
+                  <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-circle mx-2" style="font-size: 6px" aria-hidden="true"></i> Depasar
+                </p>
+              </div>
             </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
-                    </div>
+            <div class="card border-0 mt-5">
+              <div class="card-body">
+                <h6>Deskripsi</h6>
+                <div class="row justify-content-center">
+                  <div class="col-12">
+                    <p><?= $data['res']['hotels']['deskripsi']; ?></p>
+                  </div>
                 </div>
-            </footer>
-            <!-- End of Footer -->
-        </div>
-        <!-- End of Content Wrapper -->
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
+              </div>
             </div>
+            <div class="card border-0 mt-5">
+              <div class="card-body">
+                <h6>Fasilitas</h6>
+                <div class="row justify-content-center">
+                  <div class="col-4 col-xl-3 col-md">
+                    <p><i class="fa fa-wifi mx-2" aria-hidden="true"></i> Wifi</p>
+                  </div>
+                  <div class="col-4 col-xl-3 col-md-4">
+                    <p><i class="fa fa-bed mx-2" aria-hidden="true"></i> Kasur</p>
+                  </div>
+                  <div class="col-4 col-xl-3 col-md-4">
+                    <p><i class="fa fa-bath mx-2" aria-hidden="true"></i> Bath up</p>
+                  </div>
+                  <div class="col-4 col-xl-3 col-md-4">
+                    <p><i class="fa fa-medkit mx-2" aria-hidden="true"></i> Medkit</p>
+                  </div>
+                  <div class="col-4 col-xl-3 col-md-4">
+                    <p><i class="fa fa-beer mx-2" aria-hidden="true"></i> Bar</p>
+                  </div>
+                  <div class="col-4 col-xl-3 col-md-4">
+                    <p><i class="fa fa-car mx-2" aria-hidden="true"></i> Antar Jemput Bandara</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
+      </div>
+    </section>
+    <?php foreach ($data['res']['rooms'] as $res) : ?>
+      <section id="order-layouts">
+        <div class="container">
+          <div class="row justify-content-center mt-5">
+            <div class="col-12">
+              <div class="row justify-content-center">
+                <div class="col-xxl-3 col-xl-3 col-md-3">
+                  <div class="card border-0">
+                    <img src="<?= BASEURL; ?>/public/img/<?= $res['gambar']; ?>" alt="rio sadboy 2k19" class="img-fluid card-singgle-order-img" />
+                    <div class="card-body">
+                      <h6 class="card-title text-center"><?= $res['tipe_kamar']; ?></h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xxl-9 col-xl-9 col-md-9">
+                  <!-- looping -->
+                  <div class="row justify-content-center mt-3">
+                    <div class="col-xl-10 col-md-10 col-12">
+                      <div class="card-body">
+                        <h5><?= $res['tipe_kamar']; ?></h5>
+                        <hr />
+                        <p><i class="fa fa-wifi mx-2" aria-hidden="true"></i> Wifi</p>
+                        <p><i class="fa fa-bed mx-2" aria-hidden="true"></i> Kasur Double</p>
+                        <p><i class="fa fa-user mx-2" aria-hidden="true"></i> 2 Orang</p>
+                      </div>
+                    </div>
+                    <div class="col-xl-2 col-md-2 col-12 d-flex align-items-center justify-content-center">
+                      <a href="<?= BASEURL; ?>/rooms/orders/<?= $res['id_kamar']; ?>" class="btn btn-primary" data-toggle="modal" data-target="#editModal<?= $res['id_kamar']; ?>">Order</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    <?php endforeach; ?>
 
     <!-- ============= Modal area ============= -->
-    <?php foreach ($data['rooms'] as $rooms) : ?>
-        <!-- edit modal -->
-        <div class="modal" id="editModal<?= $rooms['id_kamar']; ?>" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Order Mobil</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="<?= BASEURL; ?>/orders/rooms" method="post">
-                            <input type="hidden" name="id_kamar" value="<?= $rooms['id_kamar']; ?>" />
-                            <input type="hidden" name="id_user" value="1" />
-                            <div class="form-group">
-                                <label for="message-text" class="col-form-label">Gambar</label><br>
-                                <img src="<?= BASEURL; ?>/public/img/<?= $rooms['gambar']; ?>" alt="" width="48">
-                            </div>
-                            <div class="form-group">
-                                <label for="recipient-name" class="col-form-label">Hari Mulai</label>
-                                <input type="date" class="form-control" id="recipient-name" name="hari_mulai" />
-                            </div>
-                            <div class="form-group">
-                                <label for="recipient-name" class="col-form-label">Hari Selesai</label>
-                                <input type="date" class="form-control" id="recipient-name" name="hari_selesai" />
-                            </div>
-                            <div class="form-group">
-                                <label for="message-text" class="col-form-label">Jumlah</label>
-                                <input type="number" class="form-control" id="message-text" name="jumlah" required></input>
-                            </div>
-                            <div class="form-group">
-                                <label for="message-text" class="col-form-label">Harga</label>
-                                <input type="text" class="form-control" id="recipient-name" name="harga" value="<?= $rooms['harga']; ?>" readonly />
-                            </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Kirim</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                    </div>
-                    </form>
+    <!-- edit modal -->
+    <?php foreach ($data['res']['rooms'] as $res) : ?>
+      <div class="modal" id="editModal<?= $res['id_kamar']; ?>" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Order Kamar</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="<?= BASEURL; ?>/invoice/rooms/<?= $res['id_kamar']; ?>" method="post">
+                <input type="hidden" name="id_kamar" value="<?= $res['id_kamar']; ?>" />
+                <input type="hidden" name="id_user" value="<?= $_SESSION['user_session']; ?>" />
+                <div class="form-group">
+                  <!-- <label for="message-text" class="col-form-label">Gambar</label> -->
+                  <img src="<?= BASEURL; ?>/public/img/<?= $res['gambar']; ?>" alt="" width="48">
+                </div>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Hari Mulai</label>
+                  <input type="date" class="form-control" id="recipient-name" name="hari_mulai" />
+                </div>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Hari Selesai</label>
+                  <input type="date" class="form-control" id="recipient-name" name="hari_selesai" />
+                </div>
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label">Jumlah</label>
+                  <input type="phone" class="form-control" id="message-text" name="jumlah" required></input>
+                </div>
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label">Harga</label>
+                  <input type="text" class="form-control" id="recipient-name" name="harga" value="<?= $res['harga']; ?>" readonly />
                 </div>
             </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">Kirim</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+            </div>
+            </form>
+          </div>
         </div>
+      </div>
     <?php endforeach; ?>
     <!-- end hotel create -->
+    <?php include '../app/views/templates/user/logout.php'; ?>
     <!-- ============= Modal area ============= -->
